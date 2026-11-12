@@ -29,7 +29,8 @@ jobs:
           python -m pip install -r requirements-dev.txt
 
       - name: Build
-        run: .\build.ps1
+        shell: pwsh
+        run: powershell -NoProfile -ExecutionPolicy Bypass -File .\build.ps1
 
       - name: SHA256 checksums
         shell: pwsh
